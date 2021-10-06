@@ -9,9 +9,9 @@ if [[ -t 0 ]]; then
     xclip -selection clipboard -out
   elif (( $+commands[xsel] )); then
     xsel -b
-  elif [[ "$OSTYPE" == darwin* ]]; then
+  elif [[ $OSTYPE == darwin* ]]; then
     command pbpaste
-  elif [[ "$OSTYPE" == (cygwin*|msys) ]]; then
+  elif [[ $OSTYPE == (cygwin*|msys) ]]; then
     cat /dev/clipboard
   fi
 else
@@ -23,9 +23,9 @@ else
     xclip -selection clipboard -in
   elif (( $+commands[xsel] )); then
     xsel -b
-  elif [[ "$OSTYPE" == darwin* ]]; then
+  elif [[ $OSTYPE == darwin* ]]; then
     command pbcopy
-  elif [[ "$OSTYPE" == (cygwin*|msys) ]]; then
+  elif [[ $OSTYPE == (cygwin*|msys) ]]; then
     tee > /dev/clipboard
   fi
 fi

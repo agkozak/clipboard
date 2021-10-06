@@ -6,10 +6,10 @@ if [[ $OSTYPE == linux* && -r /proc/version &&
   explorer.exe $@
 elif (( $+commands[xdg-open] )); then
   xdg-open $@
-elif [[ "$OSTYPE" == darwin* ]]; then
+elif [[ $OSTYPE == darwin* ]]; then
   command open $@
-elif [[ "$OSTYPE" == cygwin* ]]; then
+elif [[ $OSTYPE == cygwin* ]]; then
   cygstart $@
-elif [[ "$OSTYPE" == msys ]]; then
+elif [[ $OSTYPE == msys ]]; then
   explorer $@
 fi
