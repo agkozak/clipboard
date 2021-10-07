@@ -11,5 +11,5 @@ elif (( $+commands[xsel] )); then
 elif [[ $OSTYPE == darwin* ]]; then
   command pbpaste
 elif [[ $OSTYPE == (cygwin*|msys) ]]; then
-  cat /dev/clipboard
+  print "$(< /dev/clipboard)"
 fi
