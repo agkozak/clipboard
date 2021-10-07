@@ -3,7 +3,7 @@
 # WSL 1 or 2
 if [[ $OSTYPE == linux* && -r /proc/version &&
     $(< /proc/version) == *[Mm]icrosoft* ]]; then
-  powershell.exe -Command Get-Clipboard
+  powershell.exe -noprofile -Command Get-Clipboard
 elif (( $+commands[xclip] )); then
   xclip -selection clipboard -out
 elif (( $+commands[xsel] )); then
