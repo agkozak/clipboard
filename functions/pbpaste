@@ -4,9 +4,9 @@
 if [[ $OSTYPE == linux* && -r /proc/version &&
     $(< /proc/version) == *[Mm]icrosoft* ]]; then
   powershell.exe -NoProfile -NonInteractive -Command Get-Clipboard
-elif (( $+commands[xclip] )); then
+elif (( ${+commands[xclip]} )); then
   xclip -selection clipboard -out
-elif (( $+commands[xsel] )); then
+elif (( ${+commands[xsel]} )); then
   xsel -b
 elif [[ $OSTYPE == darwin* ]]; then
   command pbpaste

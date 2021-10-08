@@ -4,7 +4,7 @@
 if [[ $OSTYPE == linux* && -r /proc/version &&
     $(< /proc/version) == *[Mm]icrosoft* ]]; then
   explorer.exe $@
-elif (( $+commands[xdg-open] )); then
+elif (( ${+commands[xdg-open]} )); then
   xdg-open $@
 elif [[ $OSTYPE == darwin* ]]; then
   command open $@
