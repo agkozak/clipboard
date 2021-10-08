@@ -11,5 +11,5 @@ elif [[ $OSTYPE == darwin* ]]; then
 elif [[ $OSTYPE == cygwin* ]]; then
   cygstart $@
 elif [[ $OSTYPE == msys ]]; then
-  explorer $@
+  command start $(cygpath -w $@)
 fi
